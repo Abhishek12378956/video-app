@@ -1,0 +1,101 @@
+.profile-page { display: flex; flex-direction: column; gap: 24px; }
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Summary card */
+.profile-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 28px 24px;
+  position: sticky;
+  top: 24px;
+}
+
+.profile-avatar {
+  width: 72px; height: 72px;
+  background: var(--accent-dim);
+  border: 2px solid rgba(124,92,252,0.4);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800; font-size: 1.75rem;
+  color: var(--accent-light);
+  margin-bottom: 4px;
+}
+
+.profile-name {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+}
+
+.profile-email {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+.profile-meta-list { width: 100%; display: flex; flex-direction: column; gap: 8px; }
+
+.profile-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* Forms */
+.profile-forms { display: flex; flex-direction: column; gap: 18px; }
+
+.form-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 20px;
+}
+
+.form-header-icon {
+  width: 36px; height: 36px;
+  background: var(--accent-dim);
+  color: var(--accent-light);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.form-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Role/permissions card */
+.role-info-card {}
+
+.perm-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.perm-row:last-child { border-bottom: none; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .profile-layout { grid-template-columns: 1fr; }
+  .profile-summary { position: static; }
+  .form-row-2 { grid-template-columns: 1fr; }
+}
