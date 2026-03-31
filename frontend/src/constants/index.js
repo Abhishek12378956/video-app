@@ -112,7 +112,7 @@ export const UI_CONFIG = {
 export const ROUTES = {
   LOGIN: '/login',
   REGISTER: '/register',
-  DASHBOARD: '/dashboard',
+  DASHBOARD: '',
   LIBRARY: '/library',
   UPLOAD: '/upload',
   VIDEO: '/video/:id',

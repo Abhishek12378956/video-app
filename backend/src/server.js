@@ -18,10 +18,16 @@ const { generalLimiter } = require('./middleware/rateLimiter');
 const app = express();
 const server = http.createServer(app);
 
+const allowedOrigins = [
+  process.env.FRONTEND_URL || 'http://localhost:5173',
+  'https://video-app-phi-henna.vercel.app',
+  'https://video-p5kiy3uwl-abhishek-tiwaris-projects-31f31948.vercel.app'
+];
+
 // Socket.io setup
 const io = new Server(server, {
   cors: {
-    origin: [process.env.FRONTEND_URL || 'http://localhost:5173','https://video-app-phi-henna.vercel.app'],     
+    origin: allowedOrigins,
     methods: ['GET', 'POST'],
     credentials: true,
   },
@@ -38,7 +44,7 @@ app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 
 // CORS
 app.use(cors({
-  origin: [process.env.FRONTEND_URL || 'http://localhost:5173','https://video-app-phi-henna.vercel.app'],
+  origin: allowedOrigins,
   credentials: true,
 }));
 
